@@ -10,44 +10,13 @@ from sklearn.svm import SVC
 
 
 def extract_features(field, training_data, testing_data, type="binary"):
-    """Extract features using different methods"""
+    cv = CountVectorizer(binary=False)  # no need df.max_df because I removed the stopwords
+    cv.fit_transform(training_data[field].values.astype('U'))  # learning about the text
+    train_feature_set = cv.transform(training_data[field].values.astype('U'))
+    test_feature_set = cv.transform(testing_data[field].values.astype('U'))
+    return train_feature_set, test_feature_set, cv
 
-    print("Extracting features and creating vocabulary...")
-
-    if "binary" in type:
-
-        # BINARY FEATURE REPRESENTATION
-        cv = CountVectorizer(binary=True, max_df=0.95)
-        cv.fit_transform(training_data[field].values.astype('U'))
-
-        train_feature_set = cv.transform(training_data[field].values.astype('U'))
-        test_feature_set = cv.transform(testing_data[field].values.astype('U'))
-
-        return train_feature_set, test_feature_set, cv
-
-    elif "counts" in type:
-
-        # COUNT BASED FEATURE REPRESENTATION
-        cv = CountVectorizer(binary=False)  # no need df.max_df caz we do not have stopwords
-        cv.fit_transform(training_data[field].values.astype('U'))  # learning about the text
-
-        train_feature_set = cv.transform(training_data[field].values.astype('U'))
-        test_feature_set = cv.transform(testing_data[field].values.astype('U'))
-        return train_feature_set, test_feature_set, cv
-
-    else:
-
-        # TF-IDF BASED FEATURE REPRESENTATION
-        tfidf_vectorizer = TfidfVectorizer(use_idf=True, max_df=0.95)
-        tfidf_vectorizer.fit_transform(training_data[field].values.astype('U'))
-
-        train_feature_set = tfidf_vectorizer.transform(training_data[field].values.astype('U'))
-        test_feature_set = tfidf_vectorizer.transform(testing_data[field].values.astype('U'))
-
-        return train_feature_set, test_feature_set, tfidf_vectorizer
-
-
-# read dataset
+# Read dataset
 df = pd.read_csv('clean_dataset.csv')
 avg = 0
 n = 100
