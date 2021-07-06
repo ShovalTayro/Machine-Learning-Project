@@ -18,6 +18,9 @@ The dataset is a collection of posts from "SuicideWatch" and "depression" subred
 *	'class' - The labal (if the writer commit suicide or not).
 <img src ="https://user-images.githubusercontent.com/57803367/123545893-1e98da00-d763-11eb-8b28-f8dcf3f6ef7c.png" width="350">
 
+### Problems:
+•	The biggest problem I encountered during the project is how to clear the text of unwanted characters/ words that can affect on the results.
+•	how to extract the features
 
 ## RESULST :    
 
