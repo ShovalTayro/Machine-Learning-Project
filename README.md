@@ -17,7 +17,7 @@ The dataset is a collection of posts from "SuicideWatch" and "depression" subred
 *	'text' - the text of the post.
 *	'class' - The labal (if the writer commit suicide or not).
 *	The dataset contain 49% posts that end with 'suicide' and 51% that not end with suicide- 'non-suicide'. 
-<img src ="https://user-images.githubusercontent.com/57803367/124820873-b2924f00-df76-11eb-9713-67dc4ac61d4d.png" width="350">
+<img src ="https://user-images.githubusercontent.com/57803367/124820873-b2924f00-df76-11eb-9713-67dc4ac61d4d.png" width="600">
 
 ### Problems & Solutions:
 •	The biggest problem I encountered during the project is how to clear the text of unwanted characters/ words that can affect on the results and can impair the learning process-  
@@ -28,33 +28,34 @@ I did all these steps on the text to try to create an optimal learning dataset.
 
 •	How to extract the features-  
 The techniques I used couldn't perform learning on text, only on numbers so I had to find a way to convert the text into numbers. I chose to use 'unicode' conversion after trying to convert to integer/double that ended without success.
+After the converting to Unicode I was able to learn about the text and get good results.
 
-## RESULST :    
+## RESULSTS :    
 
 ### Logistic Regression:
-<img src ="https://user-images.githubusercontent.com/57803367/123545928-48520100-d763-11eb-9034-3c2590479f64.png" width="450">
+<img src ="https://user-images.githubusercontent.com/57803367/123545928-48520100-d763-11eb-9034-3c2590479f64.png" width="800">
 
 ______________________________________________________________________________________________________________________________  
 
 ### Adaboost:
-<img src ="https://user-images.githubusercontent.com/57803367/123545992-8c450600-d763-11eb-8669-8c64577804ff.png" width="450">  
+<img src ="https://user-images.githubusercontent.com/57803367/123545992-8c450600-d763-11eb-8669-8c64577804ff.png" width="800">  
 
 ______________________________________________________________________________________________________________________________  
 
 ### RANDOM FOREST:  
-<img src ="https://user-images.githubusercontent.com/57803367/123546016-a7b01100-d763-11eb-9751-4fff5f40cf87.png" width="450">
+<img src ="https://user-images.githubusercontent.com/57803367/123546016-a7b01100-d763-11eb-9751-4fff5f40cf87.png" width="800">
 
 ______________________________________________________________________________________________________________________________    
 
 ### KNN:
 With CountVectorizer and with TD-IDF:  
-<img src ="https://user-images.githubusercontent.com/57803367/123546061-cc0bed80-d763-11eb-9d57-d1cc95e31845.png" width="450">
+<img src ="https://user-images.githubusercontent.com/57803367/123546061-cc0bed80-d763-11eb-9d57-d1cc95e31845.png" width="800">
 __________________________________________________________________________________________________________________________      
 
 
 ### SVM :  
 With CountVectorizer and with TD-IDF:  
-<img src ="https://user-images.githubusercontent.com/57803367/124783725-f45acf80-df4d-11eb-824a-54440d48ea9f.png" width="450">
+<img src ="https://user-images.githubusercontent.com/57803367/124783725-f45acf80-df4d-11eb-824a-54440d48ea9f.png" width="800">
 
 ______________________________________________________________________________________________________________________________    
 
