@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 from sklearn.svm import SVC
 
 
-def extract_features(field, training_data, testing_data, type="binary"):
+def extract_features(field, training_data, testing_data):
     cv = CountVectorizer(binary=False)  # no need df.max_df because I removed the stopwords
     cv.fit_transform(training_data[field].values.astype('U'))  # learning about the text
     train_feature_set = cv.transform(training_data[field].values.astype('U'))
